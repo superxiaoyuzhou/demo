@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinaums.ework.promote.manager.mapper.PromoteApproveMapper">
+  <resultMap id="BaseResultMap" type="com.chinaums.ework.promote.manager.entity.PromoteApprove">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROMOTE_CODE" jdbcType="VARCHAR" property="promoteCode" />
+    <result column="BUSI_TYPE" jdbcType="CHAR" property="busiType" />
+    <result column="BUSI_CODE" jdbcType="VARCHAR" property="busiCode" />
+    <result column="BUSI_NAME" jdbcType="NVARCHAR" property="busiName" />
+    <result column="CHANGE_TYPE" jdbcType="CHAR" property="changeType" />
+    <result column="CHANGE_CONTENT" jdbcType="VARCHAR" property="changeContent" />
+    <result column="APPLY_TIME" jdbcType="TIMESTAMP" property="applyTime" />
+    <result column="APPLY_USER_NAME" jdbcType="NVARCHAR" property="applyUserName" />
+    <result column="APPLY_USER_PHONE" jdbcType="VARCHAR" property="applyUserPhone" />
+    <result column="APPROVE_STATUS" jdbcType="CHAR" property="approveStatus" />
+    <result column="APPROVE_BY" jdbcType="VARCHAR" property="approveBy" />
+    <result column="APPROVE_TIME" jdbcType="TIMESTAMP" property="approveTime" />
+    <result column="APPROVE_REMARK" jdbcType="NVARCHAR" property="approveRemark" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="BUSI_DATA" jdbcType="CLOB" property="busiData" />
+  </resultMap>
+</mapper>

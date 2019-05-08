@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chinaums.promote.manager.mapper.NoticeMapper">
+  <resultMap id="BaseResultMap" type="com.chinaums.promote.manager.entity.Notice">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="TITLE" jdbcType="NVARCHAR" property="title" />
+    <result column="SUMMARY" jdbcType="NVARCHAR" property="summary" />
+    <result column="CONTENT" jdbcType="VARCHAR" property="content" />
+    <result column="AUTHOR" jdbcType="NVARCHAR" property="author" />
+    <result column="SOURCE" jdbcType="NVARCHAR" property="source" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="VALID_DATE_BEGIN" jdbcType="TIMESTAMP" property="validDateBegin" />
+    <result column="VALID_DATE_END" jdbcType="TIMESTAMP" property="validDateEnd" />
+    <result column="DEL_FLAG" jdbcType="CHAR" property="delFlag" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
