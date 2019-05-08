@@ -70,7 +70,6 @@ public class StreamDemo {
         //mapToInt 转换类型
         int sum = list1.stream().mapToInt(i -> i ).sum();   //求和
 
-
         //max及min求最大值和最小值，此时max及min接受的是Comparator<? super T> comparator
         Integer max = list1.stream().max(Comparator.comparing(i->i)).get();
         System.out.println("max:" + max);
