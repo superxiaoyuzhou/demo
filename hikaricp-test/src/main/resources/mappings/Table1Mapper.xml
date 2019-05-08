@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piter.hikaricptest.mapper.Table1Mapper">
+
+
+    <delete id="deleteByName">
+
+    </delete>
+    <select id="selectByName" resultType="com.piter.hikaricptest.entity.Table1">
+        select * from table1 where name=#{name}
+    </select>
+
+</mapper>
