@@ -5,6 +5,14 @@
     <packaging>pom</packaging>
     <modules>
         <module>encode</module>
+		<module>apollo</module>
+		<module>excel</module>
+		<module>fast-json</module>
+		<module>hikaricp-test</module>
+		<module>lambda</module>
+		<module>mapper</module>
+		<module>mybatis-plus</module>
+		<module>tkmybatis</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
