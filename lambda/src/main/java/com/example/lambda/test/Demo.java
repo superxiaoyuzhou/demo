@@ -3,6 +3,7 @@ package com.example.lambda.test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 
 public class Demo {
 
@@ -34,9 +35,11 @@ public class Demo {
         } );
         System.out.println(list);
 
-
-
     }
+    String strOperar(String str, Function<String, String> fun) {
+        return fun.apply(str);
+    }
+
 }
 
 /**
@@ -63,3 +66,4 @@ interface FunctionalDefaultMethods {
         System.out.println("默认方法");
     }
 }
+
