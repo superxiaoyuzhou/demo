@@ -13,6 +13,8 @@
 		<module>mapper</module>
 		<module>mybatis-plus</module>
 		<module>tkmybatis</module>
+        <module>redis</module>
+        <module>design-mode</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
