@@ -1,6 +1,5 @@
-package com.example.demo.RSA;
+package RSA;
 
-import sun.security.provider.DSAKeyPairGenerator;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;

@@ -1,6 +1,6 @@
-package com.example.demo.AES;
+package AES;
 
-import org.apache.log4j.Logger;
+
 import org.springframework.util.StringUtils;
 
 import javax.crypto.Cipher;
@@ -14,7 +14,7 @@ import java.security.SecureRandom;
  *@author M-Y
  */
 public class AESUtil {
-    private static final Logger logger = Logger.getLogger(AESUtil.class);
+//    private static final Logger logger = Logger.getLogger(AESUtil.class);
     private static final String defaultCharset = "UTF-8";
     private static final String KEY_AES = "AES";
     private static final String KEY = "123456";
@@ -85,7 +85,7 @@ public class AESUtil {
                 return new String(result, defaultCharset);
             }
         } catch (Exception e) {
-            logger.error("AES 密文处理异常", e);
+//            logger.error("AES 密文处理异常", e);
         }
         return null;
     }

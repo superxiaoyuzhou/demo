@@ -1,6 +1,6 @@
-package com.example.demo.AES;
+package AES;
 
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import org.springframework.util.StringUtils;
 
 import javax.crypto.Cipher;
@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
  *@author M-Y
  */
 public class AESMD5Util {
-    private static final Logger logger = Logger.getLogger(AESMD5Util.class);
+//    private static final Logger logger = Logger.getLogger(AESMD5Util.class);
     private static final String defaultCharset = "UTF-8";
     private static final String KEY_MD5 = "MD5";
     private static MessageDigest md5Digest;
@@ -88,7 +88,7 @@ public class AESMD5Util {
                 return new String(result, defaultCharset);
             }
         } catch (Exception e) {
-            logger.error("AES 密文处理异常", e);
+//            logger.error("AES 密文处理异常", e);
         }
         return null;
     }

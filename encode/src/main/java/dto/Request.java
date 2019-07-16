@@ -1,8 +1,7 @@
-package com.example.demo.dto;
+package dto;
 
 
 
-import com.google.common.base.Strings;
 import org.springframework.util.StringUtils;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,7 +19,7 @@ public class Request extends ConcurrentHashMap<String, Object>{
         return this;
     }
     public String get(final String key){
-        if (Strings.isNullOrEmpty(key) || !super.containsKey(key)){
+        if (StringUtils.isEmpty(key) || !super.containsKey(key)){
             return null;
         }
         if (super.get(key) == null){
@@ -30,7 +29,7 @@ public class Request extends ConcurrentHashMap<String, Object>{
     }
 
     public Object getObject(final String key){
-        if (Strings.isNullOrEmpty(key) || !super.containsKey(key)){
+        if (StringUtils.isEmpty(key) || !super.containsKey(key)){
             return null;
         }
         if (super.get(key) == null){

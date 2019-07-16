@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package controller;
 
-import com.example.demo.dto.Request;
+import dto.Request;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
