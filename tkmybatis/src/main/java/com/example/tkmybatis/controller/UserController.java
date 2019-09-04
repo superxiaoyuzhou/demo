@@ -1,9 +1,11 @@
 package com.example.tkmybatis.controller;
 
 import com.example.tkmybatis.entity.User;
+import com.example.tkmybatis.entity.User2;
 import com.example.tkmybatis.mapper.UserMapper;
 import com.example.tkmybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import tk.mybatis.mapper.entity.Condition;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -69,5 +73,22 @@ public class UserController {
     @RequestMapping("/find6")
     public Object find6(@RequestBody User user){
         return userService.find6(user);
+    }
+    @RequestMapping("/find7")
+    public Object find7(@RequestBody String aaa){
+        return aaa;
+    }
+
+    @RequestMapping("/find8")
+    @DateTimeFormat(pattern = "yyyyMMdd")
+    public User2 find8(@RequestBody @Valid String aaa){
+        User2 user2 = new User2();
+        user2.setDate1(aaa);
+        return user2;
+    }
+
+    @RequestMapping("/find9")
+    public Object find9(@RequestBody User user){
+        return user;
     }
 }

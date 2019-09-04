@@ -1,0 +1,7 @@
+{
+"creditInfoId":"836cc696f15e4a0db85266a8cd904a2b",
+"userVerifyCode":"1234",
+"userNo":"155489213907201281",
+"custNo":"",
+"userPhone":"15213030108"
+}

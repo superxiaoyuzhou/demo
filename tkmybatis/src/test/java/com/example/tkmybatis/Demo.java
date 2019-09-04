@@ -26,4 +26,8 @@ public class Demo {
         Object parse1 = JSONArray.toJSON(user);
         log.info("" + parse1);
     }
+
+    public void test1(){
+
+    }
 }

@@ -1,0 +1,41 @@
+discovery|-Xmx256m|spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/discovery.yml|discovery.jar
+config-center|-Xmx256m|--spring.profiles.active=native,logfile --spring.config.location=file:/home/coop_loan/apps/config-center.yml|config-center.jar
+pre-sys-h5|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/pre-sys-h5.yml|pre-sys-h5.jar
+gateway|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/gateway.yml|gateway.jar
+user|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/user.yml|user.jar
+promote|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/promote.yml|promote.jar
+msxf-pre|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/msxf-pre.yml|msxf-pre.jar
+msxf-adp|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/msxf-adp.properties|msxf-adp.jar
+qmg-pre|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/qmg-pre.yml|qmg-pre.jar
+qmg-adp|-Xmx256m|--spring.profiles.active=logfile --spring.config.location=file:/home/coop_loan/apps/qmg-adp.properties|qmg-adp.jar
+jobs|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/jobs.yml|jobs.jar
+magfin-adp|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/magfin-adp.properties|magfin-adp.jar
+net-loan-agent-smk|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/net-loan-agent-smk.yml|net-loan-agent-smk.jar
+mer-eloan-pre|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/mer-eloan-pre.yml|mer-eloan-pre.jar
+admin-server|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/admin-server.yml|admin-server.jar
+cooperation-plat-pre|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/cooperation-plat-pre.properties|cooperation-plat-pre.jar
+osp-admin-system|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/osp-admin-system.yml|osp-admin-system.jar
+promote-manager|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/promote-manager.yml|promote-manager.jar
+qmg-api|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/qmg-api.yml|qmg-api.jar
+mer-qmh-agent|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/mer-qmh-agent.yml|mer-qmh-agent.jar
+factoring-manager|-Xmx256m|--spring.config.location=./config/factoring-manager.jar/|factoring-manager.jar
+bffq-pre|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/bffq-pre.yml|bffq-pre.jar
+damper-board|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/damper-board.properties|damper-board.jar
+bffq-job|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/bffq-job.yml|bffq-job.jar
+isign-busi|-Xmx256m|--spring.config.location=./config/isign-busi.jar/|isign-busi.jar
+isign-batch|-Xmx256m|--spring.config.location=./config/isign-batch.jar/|isign-batch.jar
+isign-manager|-Xmx256m|--spring.config.location=./config/isign-manager.jar/|isign-manager.jar
+ework|-Xmx256m|--spring.profiles.active=test,logfile --spring.config.location=./config/ework.jar/|ework.jar
+authcas-manager|-Xmx256m|--spring.profiles.active=test,logfile --spring.config.location=./config/authcas-manager.jar/|authcas-manager.jar
+authcas|-Xmx256m|--spring.profiles.active=test,logfile --spring.config.location=./config/authcas.jar/|authcas.jar
+ccs|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/ccs.yml|ccs.jar
+identity-auth|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/identity-auth.yml|identity-auth.jar
+geetest|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/geetest.yml|geetest.jar
+credit-pay-manager|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/credit-pay-manager.yml|credit-pay-manager.jar
+zj-gateway-interior|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/zj-gateway-interior.yml|zj-gateway-interior.jar
+msg-app|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/msg-app.yml|msg-app.jar
+zy-pre|-Xmx256m|--spring.profiles.active=test --spring.config.location=file:/home/coop_loan/apps/zy-pre.yml|zy-pre.jar
+srp-manage|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/srp-manage.yml|srp-manage.jar
+sett-jobs|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/sett-jobs.yml|sett-jobs.jar
+sett-system|-Xmx256m|--spring.profiles.active=dev,logfile --spring.config.location=file:/home/coop_loan/apps/sett-system.yml|sett-system.jar
+hr-manage|-Xmx256m|--spring.profiles.active=test,logfile --spring.config.location=./config/hr-manage.jar/|hr-manage.jar

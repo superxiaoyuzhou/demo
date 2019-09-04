@@ -21,7 +21,8 @@ public class RSAUtil {
     /**
      * 签名算法
      */
-    private static final String SIGNATURE_ALGORITHM = "MD5withRSA";
+//    private static final String SIGNATURE_ALGORITHM = "MD5withRSA";     //MD5withRSA签名算法
+    private static final String SIGNATURE_ALGORITHM = "SHA256WithRSA";    //SHA256WithRSA签名算法
 
     /**
      * 获取公钥的key
@@ -302,8 +303,8 @@ public class RSAUtil {
         publicKey = RSAUtil.getPublicKey(keyMap);
         privateKey = RSAUtil.getPrivateKey(keyMap);
 //        publicEncode(publicKey, privateKey);  //公钥加密--私钥解密
-        publicDecode(privateKey,publicKey);      //私钥加密--公钥解密
-//        publicEncodeSign(publicKey, privateKey);  //公钥加密--私钥解密--签名验证
+//        publicDecode(privateKey,publicKey);      //私钥加密--公钥解密
+        publicEncodeSign(publicKey, privateKey);  //公钥加密--私钥解密--签名验证
 
 
     }
@@ -315,7 +316,9 @@ public class RSAUtil {
         byte[] data = source.getBytes();
         byte[] encodedData = RSAUtil.encryptByPublicKey(data, publicKey);
         System.out.println("加密后文字：" + new String(encodedData));
+        //签名
         String sign = sign(encodedData, privateKey);
+
         if (verify(encodedData,publicKey,sign)){
             System.out.println("签名验证成功!");
             byte[] decodedData = RSAUtil.decryptByPrivateKey(encodedData, privateKey);

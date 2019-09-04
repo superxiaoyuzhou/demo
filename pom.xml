@@ -15,6 +15,7 @@
 		<module>tkmybatis</module>
         <module>redis</module>
         <module>design-mode</module>
+        <module>shell</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
