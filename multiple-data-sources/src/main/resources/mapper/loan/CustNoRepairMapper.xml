@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piter.multipledatasources.mapper.loan.CustNoRepairMapper">
+
+    <select id="selectCreditInfo" resultType="hashmap">
+        select ID,USER_NO,CERT_ID
+        from LOAN_USER_CREDIT_INFO i
+        where i.cust_no is null
+        and EXISTS(
+                select 1
+                from loan_user_credit_status s
+                where s.credit_info_id = i.id
+                  and s.PHASE_CODE = 'REAL_AUTH'
+                  and s.PHASE_STATUS = 'SU'
+            )
+    </select>
+
+    <update id="updateCreditInfo">
+        update LOAN_USER_CREDIT_INFO
+        set CUST_NO     = #{custNo}
+        where ID = #{id}
+    </update>
+
+    <update id="updateCreditStatus">
+        update LOAN_USER_CREDIT_STATUS
+        set CUST_NO     = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateImage">
+        update LOAN_USER_IMAGE
+        set CUST_NO     = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateBankCard">
+        update LOAN_USER_BANK_CARD
+        set CUST_NO     = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateCompanyInfo">
+        update LOAN_USER_COMPANY_INFO
+        set CUST_NO     = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateApply">
+        update LOAN_USER_CREDIT_APPLY
+        set CUST_NO = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateContract">
+        update LOAN_CONTRACT
+        set CUST_NO = #{custNo}
+        where CREDIT_INFO_ID  = #{creditInfoId}
+    </update>
+
+    <update id="updateOrder">
+        update LOAN_ORDER
+        set CUST_NO = #{custNo}
+        where CONT_NO in(
+        select CONT_NO from LOAN_CONTRACT where CREDIT_INFO_ID = #{creditInfoId}
+        )
+    </update>
+
+    <update id="updateRepay">
+        update LOAN_REPAY
+        set CUST_NO = #{custNo}
+        where CONT_NO in(
+                select CONT_NO from LOAN_CONTRACT where CREDIT_INFO_ID = #{creditInfoId}
+            )
+    </update>
+
+    <update id="updateRepayPlan">
+        update LOAN_REPAY_PLAN
+        set CUST_NO = #{custNo}
+        where CONT_NO in(
+            select CONT_NO from LOAN_CONTRACT where CREDIT_INFO_ID = #{creditInfoId}
+        )
+    </update>
+
+    <update id="updateRepaySelf">
+        update LOAN_REPAY_SELF
+        set CUST_NO = #{custNo}
+        where LOAN_ORDER_NO in(
+                select ORDER_NO from LOAN_ORDER
+                where CONT_NO in(
+                    select CONT_NO from LOAN_CONTRACT where CREDIT_INFO_ID = #{creditInfoId}
+                    )
+            )
+    </update>
+
+
+
+</mapper>

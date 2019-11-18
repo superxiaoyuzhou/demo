@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.piter.multipledatasources.mapper.loan.SettingBankCardBinMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.chinaums.datarepair.entity.loan.SettingBankCardBin">
+        <id column="ID" property="id" />
+        <result column="ISS_BANK_NAME" property="issBankName" />
+        <result column="BANK_CATEGORY" property="bankCategory" />
+        <result column="ISS_BANK_CODE" property="issBankCode" />
+        <result column="CARD_NAME" property="cardName" />
+        <result column="CARD_BIN" property="cardBin" />
+        <result column="CARD_ATTR" property="cardAttr" />
+        <result column="LENGTH" property="length" />
+        <result column="CARD_BIN_LEN" property="cardBinLen" />
+        <result column="CREATE_DATETIME" property="createDatetime" />
+        <result column="CREATE_PERSON" property="createPerson" />
+        <result column="CREATE_TIME" property="createTime" />
+        <result column="CREATE_USER_ID" property="createUserId" />
+        <result column="UPDATE_TIME" property="updateTime" />
+        <result column="UPDATE_USER_ID" property="updateUserId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID, ISS_BANK_NAME, BANK_CATEGORY, ISS_BANK_CODE, CARD_NAME, CARD_BIN, CARD_ATTR, LENGTH, CARD_BIN_LEN, CREATE_DATETIME, CREATE_PERSON, CREATE_TIME, CREATE_USER_ID, UPDATE_TIME, UPDATE_USER_ID
+    </sql>
+    <select id="selectAll" resultType="java.util.Map">
+        SELECT ID, ISS_BANK_NAME, BANK_CATEGORY,CARD_BIN,LENGTH,CARD_BIN_LEN
+        FROM coop_loan.SETTING_BANK_CARD_BIN
+    </select>
+
+</mapper>

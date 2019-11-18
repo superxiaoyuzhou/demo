@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty name="LOG_FILE" source="logging.file" defaultValue="${user.dir}/logs/${spring.application.name}.log"/>
+    <springProperty name="JMS_PROVIDER_URL" source="logging.jms.provider-url" defaultValue=""/>
+    <springProperty name="JMS_QUEUE_NAME" source="logging.jms.queue-name" defaultValue=""/>
+    <springProperty name="JMS_USER_NAME" source="logging.jms.user-name" defaultValue=""/>
+    <springProperty name="JMS_PASSWORD" source="logging.jms.password" defaultValue=""/>
+
+    <springProfile name="dev">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <root level="info">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod, test">
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <encoder>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%file : %line] --- [%t] %logger : %m%n</pattern>
+            </encoder>
+            <file>${LOG_FILE}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i</fileNamePattern>
+                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                    <maxFileSize>100MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+                <maxHistory>90</maxHistory>
+            </rollingPolicy>
+        </appender>
+        <root level="info">
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+</configuration>

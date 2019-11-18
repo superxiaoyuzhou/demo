@@ -16,6 +16,9 @@
         <module>redis</module>
         <module>design-mode</module>
         <module>shell</module>
+		<module>multiple-data-sources</module>
+		<module>dataencrypt-sdk</module>
+		<module>commons-sdk</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
