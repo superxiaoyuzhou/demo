@@ -124,6 +124,11 @@ public class StreamDemo {
 
     }
 
+    /**
+     * 乘2
+     * @param i
+     * @return
+     */
     public static int doubleNum(int i) {
         System.out.println("执行乘2");
         return i*2;
