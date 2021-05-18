@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * 每天都是新的一天
+ * 每天都是新的一天,新的开始
  */
 public class StreamDemo {
 
