@@ -6,9 +6,9 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
+ * 每天都是新的一天,新的开始
  * 明日复明日,明日何其多
  *
- * 每天都是新的一天
  */
 public class StreamDemo {
 
