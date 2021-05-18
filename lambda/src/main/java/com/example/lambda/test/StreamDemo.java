@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * 每天都是新的一天
+ */
 public class StreamDemo {
 
     public static void main(String[] args) {
