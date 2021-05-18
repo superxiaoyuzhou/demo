@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+/**
+ * 明日复明日,明日何其多
+ */
 public class StreamDemo {
 
     public static void main(String[] args) {
