@@ -35,9 +35,41 @@ public class Demo {
         } );
         System.out.println(list);
 
+        //
+        Runnable run1 = () -> System.out.println("aaa");
+        Runnable run2 = () -> System.out.println("aaa");
+        System.out.println(run1 == run2);
+
+        Object run3 = (Runnable)() -> System.out.println("aaa");
+        new Thread((Runnable) run3).start();
+
+        //如何知道lambda表达式的类型
+        //1.变量类型定义
+        MyFunctional lambda = (x, y) -> {};
+        MyFunctional[] lambdas = {(x, y) -> {},(x, y) -> {}};
+        //2.强转
+        Object lambda2 = (MyFunctional)(x, y) -> {};
+        //3.通过返回类型
+        MyFunctional lambda3 = getFunction();
+        //4.通过参数类型
+        setFunction(lambda3);
+        //5.当有二义性时,使用强转对应接口来解决
+        setFunction((MyFunctional2) (x, y) -> {});
+
+
     }
     String strOperar(String str, Function<String, String> fun) {
         return fun.apply(str);
+    }
+    public static MyFunctional getFunction(){
+        return (x, y) -> {};
+    }
+
+    public static MyFunctional setFunction(MyFunctional myFunctional){
+        return (x, y) -> {};
+    }
+    public static MyFunctional setFunction(MyFunctional2 myFunctional){
+        return (x, y) -> {};
     }
 
 }
@@ -48,8 +80,12 @@ public class Demo {
  // 为了克服这种代码层面的脆弱性，并显式说明某个接口是函数式接口，Java 8 提供了一个特殊的注解@FunctionalInterface（Java 库中的所有相关接口都已经带有这个注解了），举个简单的函数式接口的定义：
  */
 @FunctionalInterface
-interface Functional {
-    void method();
+interface MyFunctional {
+    void method(String x,String y);
+}
+@FunctionalInterface
+interface MyFunctional2 {
+    void method(String x,String y);
 }
 /**
  * 不过有一点需要注意，默认方法和静态方法不会破坏函数式接口的定义，因此如下的代码是合法的。
@@ -66,4 +102,5 @@ interface FunctionalDefaultMethods {
         System.out.println("默认方法");
     }
 }
+
 

@@ -1,11 +1,8 @@
 package com.example.lambda.test;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamDemo {
@@ -96,5 +93,34 @@ public class StreamDemo {
         System.out.println("anyMatch:" + a);
         System.out.println("allMatch:" + b);
 
+        int[] nums = {1,2,3,4};
+        int num = IntStream.of(nums).max().getAsInt();  //求最小值
+        System.out.println(num);
+        //map是中间操作(返回stream的操作),sum是终止操作
+        int sum1 = IntStream.of(nums).map(i -> i * 2).sum();
+        //惰性求值:在没有调用终止操作的情况下,中间操作不会执行,如:
+        IntStream.of(nums).map(StreamDemo::doubleNum);
+
+        //Stream流创建的方式
+        //1.Collection.stream/parallelStream
+        Stream<Object> stream2 = new ArrayList<>().stream();
+        Stream<Object> stream3 = new ArrayList<>().parallelStream();
+        //2.Arrays.stream
+        Stream<Object> stream4 = Arrays.stream(new Object[]{});
+        //3.数字Stream,如:IntStream.range/rangeClosed/of等
+        new Random().ints().limit(10);  //创建一个无限流,限制产生10个元素
+        //4.自己创建 Stream.generate/iterate
+//        Stream.generate(() -> "1").forEach(System.out::println);    //无限流
+        Stream.generate(() -> "1").limit(3).forEach(System.out::println);    //无限流,限制产生3个元素
+
+        //Stream流的中间操作
+        //无状态操作
+        //有状态操作
+
+    }
+
+    public static int doubleNum(int i) {
+        System.out.println("执行乘2");
+        return i*2;
     }
 }
